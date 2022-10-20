@@ -1,0 +1,61 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 0.9rem;
+}
+
+html, body {
+    margin: 0 auto;
+    padding: 0;
+    width: 92%;
+    font-family: Georgia, serif;
+    line-height: 1.5;
+    color: #1a1a1a;
+    background: #fdfdfd;
+}
+
+a {
+    color: #1a1a1a;
+}
+
+h2 a {
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    color: #000;
+    text-decoration: underline;
+}
+
+.api {
+    display: grid;
+    margin-bottom: 2rem;
+    gap: 1rem;
+    /* The grid should have 4 rows
+    3rem, 1rem, 4rem, 3rem respectively
+    and 3 columns each 1/3rd of available width */
+    grid-template-rows: 3rem 3rem 3rem 4rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+        'name name name'
+        'category category category'
+        'auth cors https'
+        'description description description';
+}
+
+.api-name { grid-area: name;}
+.api-description { grid-area: description;}
+.api-auth { grid-area: auth;}
+.api-cors { grid-area: cors;}
+.api-https { grid-area: https;}
+.api-category { grid-area: category;}
+
+@media (min-width:600px) {
+    body {
+        font-size: 1.25rem;
+        max-width: 36em;
+    }
+}
